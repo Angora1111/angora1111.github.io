@@ -17,3 +17,11 @@ console.log(variableA);
 // 変数に別の変数の値を代入することもできる
 variableA = variableB;
 console.log(variableA);
+
+console.log(-123);
+console.log(0);
+console.log(0xff);
+console.log(-0.1);
+console.log(.123);
+console.log(-3.0);
+console.log(.0);
