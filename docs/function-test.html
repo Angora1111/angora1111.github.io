@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <h1>Hello, world!</h1>
+  <button onclick="hello()">こんにちはボタン</button>
+  <div onclick="hello()">こんにちはテキスト</div>
+  <p onmouseover="hello()">こんにちはマウスオーバーテキスト</p>
+</div>
+
+<!-- ここで読み込む -->
+<script type="text/javascript" src="function-test.js"></script>
+
+<!-- 使えるのはこの後から -->
+<script>
+  showMessage("１回目");
+  showMessage("２回目");
+  show3Messages("あ", "い", "う");
+  show3Messages("あ", "い");
+  show2Messages("バナナ", "ぶどう");
+  show2Messages("メロン");
+
+  console.log(superCulculator());
+  console.log(product(2021, 1010));
+  console.log(onesPlaceOfProduct(2021, 1010));
+  console.log(tensPlaceOfProduct(2021, 1010));
+
+  console.log(taro.width);
+  console.log(taro.age);
+  taro.age = 100;
+  console.log(taro.age);
+
+  hello();
+  helloSomeone("こばやし");
+  helloCircleArea(5);
+  helloRectangleArea(4, 10);
+  console.log(circleArea(10));
+  console.log(rectangleArea(200, 600));
+</script>
+</body>
+</html>
