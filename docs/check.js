@@ -27,3 +27,22 @@ function checkAge(){
   }
   document.querySelector("#answer").innerHTML = showMessage;
 }
+
+// 宿題１
+function checkYear(){
+  let year = Number(document.querySelector("#year").value);
+  let result = "";
+  if(year % 400 == 0){
+    result = "閏年";
+  }
+  else if(year % 100 == 0){
+    result = "平年";
+  }
+  else if(year % 4 == 0){
+    result = "閏年";
+  }
+  else{
+    result = "平年"
+  }
+  document.querySelector("#answer").innerHTML = result;
+}
