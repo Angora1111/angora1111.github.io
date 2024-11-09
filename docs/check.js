@@ -32,6 +32,8 @@ function checkAge(){
 function checkYear(){
   let year = Number(document.querySelector("#year").value);
   let result = "";
+
+  // 解法１
   if(year % 400 == 0){
     result = "閏年";
   }
@@ -44,5 +46,14 @@ function checkYear(){
   else{
     result = "平年"
   }
+
+  // 解法２
+  if(year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)){
+    result = "閏年"
+  }
+  else{
+    result = "平年"
+  }
+
   document.querySelector("#answer").innerHTML = result;
 }

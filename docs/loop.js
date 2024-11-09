@@ -32,6 +32,8 @@ function doLoop(){
   answer += "<br>3:<br>";
   num = 1;
   while(num <= 100){
+    answer += checkFizzBuzz(num);
+    /*
     if(num % 15 == 0){
       answer += `FizzBuzz`;
     }
@@ -45,8 +47,27 @@ function doLoop(){
       answer += num;
     }
     answer += "<br>";
+    */
     num++;
   }
 
   document.querySelector("#answer").innerHTML = answer;
+}
+
+function checkFizzBuzz(num){
+  let answer = "";
+  if(num % 15 == 0){
+    answer += `FizzBuzz`;
+  }
+  else if(num % 3 == 0){
+    answer += `Fizz`;
+  }
+  else if(num % 5 == 0){
+    answer += `Buzz`;
+  }
+  else{
+    answer += num;
+  }
+  answer += "<br>";
+  return answer;
 }
