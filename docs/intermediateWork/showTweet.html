@@ -10,10 +10,12 @@
 <body>
 <div class="container">
   <h1>みんなのツイートをみよう</h1>
-  <button onclick="showTweet('')">All</button>
-  <button onclick="showTweet('三郎BOT')">三郎BOT</button>
-  <button onclick="showTweet('次郎')">次郎</button>
-  <button onclick="showTweet('太郎')">太郎</button>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary" onclick="showTweet('')">All</button>
+    <button type="button" class="btn btn-secondary" onclick="showTweet('三郎BOT')">三郎BOT</button>
+    <button type="button" class="btn btn-secondary" onclick="showTweet('次郎')">次郎</button>
+    <button type="button" class="btn btn-secondary" onclick="showTweet('太郎')">太郎</button>
+  </div>
   <p></p>
 
   <div  id="tweet-list">

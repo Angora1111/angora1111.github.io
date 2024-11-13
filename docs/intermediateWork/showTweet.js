@@ -8,12 +8,12 @@ function showTweet(filter){
   tweets.forEach((tweet) => {
     // フィルターなし or フィルターに該当　なら表示
     if(filter == `` || tweet.name == filter) {
-      content += `    <div class="row">\n`
-      content += `      <img src="${tweet.avatar}" class="col-2">\n`
-      content += `      <div class="col-10">\n`
-      content += `        <p class="fw-bold">${tweet.name}</p>\n`
-      content += `        <p>${tweet.message}</p>\n`
-      content += `        <p class="fst-italic">${tweet.tweetedAt}</p>\n`
+      content += `    <div class="row border p-3">\n`
+      content += `      <img src="${tweet.avatar}" class="col-2 border">\n`
+      content += `      <div class="col-9">\n`
+      content += `        <p><span class="fw-bold">${tweet.name}</span> `
+      content += `        ${tweet.message} `
+      content += `        <span class="fst-italic">${tweet.tweetedAt}</span></p>\n`
       content += `      </div>\n`
       content += `    </div>\n`
     }
