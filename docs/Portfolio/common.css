@@ -1,0 +1,55 @@
+#start-cover{
+  position: fixed;
+  background: rgba(10, 10, 10, 1);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  text-color: white;
+}
+
+#start-text{
+  font-size: 30px;
+}
+
+.title{
+  width: 240px;
+  background: linear-gradient(transparent 70%, #86b7fe 70%);
+}
+
+.btn{
+  transition: transform 300ms;
+}
+.btn:hover{
+  transform: scale(1.1, 1.1);
+}
+
+.circle{
+  width: 40px;
+  height: 40px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50%;
+}
+
+.gameBlock{
+  transition: border-color 300ms;
+  border: 4px solid;
+  border-color: rgba(255, 193, 7, 0);
+}
+.gameBlock:hover{
+  border-color: rgba(255, 193, 7, 1);
+}
+
+.pointTitle{
+  color: #3d8bfd;
+  text-align: center;
+  padding: 0.25em;
+  border-top: solid 2px #3d8bfd;
+  border-bottom: solid 2px #3d8bfd;
+  background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px, #0d6efd 3px, #0d6efd 7px);
+  background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px, #cfe2ff 3px, #cfe2ff 7px);
+}

@@ -7,9 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link href="common.css" rel="stylesheet">
   <title>Artificial Listener | Itsuki's Portfolio</title>
 </head>
 <body>
+<!-- ページを開いたときの演出 -->
+<div id="start-cover-parent">
+  <div id="start-cover"></div>
+</div>
+
 <!-- ヘッダー -->
 <header style="height: 40px" class="sticky-top text-center bg-dark container-fluid">
   <div class="row">
@@ -21,43 +27,42 @@
 
 <!-- タイトル -->
 <div class="container-fluid">
-  <h1 id="title" class="display-1 ps-4 pt-2 mb-4">Artificial Listener</h1>
+  <h1 style="background: linear-gradient(transparent 70%, #86b7fe 70%); width: 600px" id="title" class="display-1 ps-4 pt-2 mb-4"></h1>
 </div>
 <div class="container">
   <!-- メイン -->
   <div class="row">
-    <img id="game-image" class="col-6" src="Images/AL_main.png" alt="ゲーム画面" width="100%">
+    <img id="game-image" class="col-6" src="" alt="ゲーム画面" width="100%">
     <div class="col-6">
-      <p id="env" class="fs-4">開発環境やライブラリ：Unity</p>
-      <p id="time" class="fs-4">制作時間：97時間</p>
-      <p id="member-num" class="fs-4">制作人数：1人</p>
+      <p id="env" class="fs-4">開発環境やライブラリ：</p>
+      <p id="time" class="fs-4">制作時間：</p>
+      <p id="member-num" class="fs-4">制作人数：</p>
       <p id="my-part" class="fs-4">担当：</p>
       <p id="link">関連リンク：<a href=""></a></p>
     </div>
   </div>
-  <p class="fs-4 mb-0">概要：</p>
-  <p id="abstract" class="mt-0 fs-5">あああああ</p>
+  <p id="abstract" class="mt-2 fs-5"></p>
 
   <!-- アピールポイント1つ目 -->
-  <h2 id="point1-header" class="text-center m-4 display-4 text-decoration-underline">ゲームエンジンに頼らないサウンド再生</h2>
+  <h2 id="point1-header" class="pointTitle m-4 display-4 fw-bold"></h2>
   <div class="row">
     <div class="col-5">
-      <p id="point1-content" class="fs-5">あああああああああああああああ</p>
+      <p id="point1-content" class="fs-5"></p>
     </div>
-    <div id="point1-images" class="col-7 border">
+    <div id="point1-images" class="col-7">
 
     </div>
   </div>
 
   <!-- アピールポイント2つ目 -->
   <div style="height: 40px"></div>
-  <h2 id="point2-header" class="text-center m-4 display-4 text-decoration-underline">ゲームエンジンに頼らないサウンド再生</h2>
+  <h2 id="point2-header" class="pointTitle m-4 display-4 fw-bold"></h2>
   <div class="row">
-    <div id="point2-images" class="col-8 border">
+    <div id="point2-images" class="col-7">
 
     </div>
-    <div class="col-4">
-      <p id="point2-content" class="fs-5">あああああああああああああああ</p>
+    <div class="col-5">
+      <p id="point2-content" class="fs-5"></p>
     </div>
   </div>
 </div>
@@ -70,6 +75,10 @@
 <script type="text/javascript" src="work.js"></script>
 <script type="text/javascript">
   updateInfo("Artificial Listener");
+</script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+  subOpening();
 </script>
 
 </body>

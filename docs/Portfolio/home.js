@@ -1,3 +1,29 @@
+async function wait(second){
+  return new Promise(resolve => setTimeout(resolve, 1000 * second));
+}
+async function restartCircles(){
+  anime({
+    targets: "#circle1",
+    scale: 0.6,
+    direction: "alternate",
+    loop: true,
+  })
+  await wait(0.12);
+  anime({
+    targets: "#circle2",
+    scale: 0.6,
+    direction: "alternate",
+    loop: true,
+  })
+  await wait(0.12);
+  anime({
+    targets: "#circle3",
+    scale: 0.6,
+    direction: "alternate",
+    loop: true,
+  })
+}
+
 // 作品情報
 let url = `https://sheets.googleapis.com/v4/spreadsheets/1Xc76fJwuRMAVVwUsyTrybb9MbYqZ3SWrzcmrEBV3-Fw/values/Works?key=AIzaSyBWN4pynC1PzYGwVMHLYh84w0KjAzAWmYY`;
 
@@ -111,8 +137,18 @@ function showOthers(){
       if(subWorkElement.innerHTML != ""){
         subWorkElement.innerHTML = "";
         document.querySelector('#button-show-others').innerHTML = "View Others";
+        document.querySelector('#circles').innerHTML =
+          `
+          <div id="circle1" class="circle bg-dark"></div>
+          <div id="circle2" class="circle bg-dark"></div>
+          <div id="circle3" class="circle bg-dark"></div>
+          `;
+        restartCircles();
+        subWorkElement.className = "";
+
         return;
       }
+      document.querySelector('#circles').innerHTML = "";
 
       let subWorkHtml = '';
       let isHeader = true;
@@ -134,9 +170,9 @@ function showOthers(){
             }
             subWorkHtml +=
             `
-            \t<div class="col-3 border">
+            \t<div class="col-3 gameBlock">
             \t\t<img src=${image} alt=サブ画像${subCount+1} width="100%"/>
-            \t\t<p class="fw-bold fs-3 mb-0">${title}</p>
+            \t\t<p class="fw-bold fs-3 mb-0 text-decoration-underline">${title}</p>
             \t\t<p>${abstract}</p>
             \t\t<div class="row m-1">
             \t\t\t<div class="col-8"></div>
@@ -161,6 +197,7 @@ function showOthers(){
         `
       }
       subWorkElement.innerHTML = `${subWorkHtml}`;
+      subWorkElement.className = "m-4";
       document.querySelector('#button-show-others').innerHTML = "Close";
     }
   );
