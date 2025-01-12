@@ -34,27 +34,66 @@ fetch(url).then(
 url = `https://sheets.googleapis.com/v4/spreadsheets/1Xc76fJwuRMAVVwUsyTrybb9MbYqZ3SWrzcmrEBV3-Fw/values/Profile?key=AIzaSyBWN4pynC1PzYGwVMHLYh84w0KjAzAWmYY`;
 
 fetch(url).then(
-    function (response) {
-      return response.json();
-    }
+  function (response) {
+    return response.json();
+  }
 ).then(
-    (json) => {
-      let rowCount = 0;
-      json.values.forEach((row) => {
-        if(rowCount == 1) {
-          let name = row[0];
-          let born = row[1];
-          let birthday = row[2];
-          let university = row[3];
-          let hobby = row[4];
-          let desire = row[5];
+  (json) => {
+    let rowCount = 0;
+    json.values.forEach((row) => {
+      if(rowCount == 1) {
+        let name = row[0];
+        let born = row[1];
+        let birthday = row[2];
+        let university = row[3];
+        let hobby = row[4];
+        let desire = row[5];
+        let myFace = row[6];
 
-          let element = document.getElementById("profile-myFace").src = "";
+        document.getElementById("profile-myFace").src = myFace;
+        document.getElementById("profile-name").innerHTML = name;
+        document.getElementById("profile-born").innerHTML = `${born} ${birthday} 生まれ`;
+        document.getElementById("profile-university").innerHTML = university;
+        document.getElementById("profile-hobby").innerHTML = `趣味：${hobby}`;
+        document.getElementById("profile-desire").innerHTML = desire;
+      }
+      else if(rowCount == 3) {
+        let element = document.getElementById("language");
+        let text = '';
+        let progressName = ["Beginner", "Intermediate", "Advanced"];
+        let colWidth = [2, 5, 8];
+        for(let i = 0; i < row.length; i += 2){
+          text +=
+            `
+            <div class="row mb-2">
+              <div class="col-1"></div>
+              <div class="col-3 fs-3 fw-bold">${row[i]}</div>
+              <div class="col-${colWidth[row[i+1]-1]} bg-primary text-white align-middle fs-4">${progressName[row[i+1]-1]}</div>
+            </div>
+            `
         }
-        rowCount++;
-      });
-      //mainWorkElement.innerHTML = `${mainWorkHtml}`;
-    }
+        element.innerHTML = text;
+      }
+      else if(rowCount == 4) {
+        let element = document.getElementById("tool");
+        let text = '';
+        let progressName = ["Beginner", "Intermediate", "Advanced"];
+        let colWidth = [2, 5, 8];
+        for(let i = 0; i < row.length; i += 2){
+          text +=
+              `
+            <div class="row mb-2">
+              <div class="col-1"></div>
+              <div class="col-3 fs-3 fw-bold">${row[i]}</div>
+              <div class="col-${colWidth[row[i+1]-1]} bg-primary text-white align-middle fs-4">${progressName[row[i+1]-1]}</div>
+            </div>
+            `
+        }
+        element.innerHTML = text;
+      }
+      rowCount++;
+    });
+  }
 );
 
 //---------------------------------------------------------

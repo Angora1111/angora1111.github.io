@@ -14,20 +14,63 @@
 <header style="height: 40px" class="sticky-top text-center bg-dark container-fluid">
   <div class="row">
     <div class="col"></div>
-    <button type="button" class="col btn btn-dark">About</button>
-    <button type="button" class="col btn btn-dark">Works</button>
+    <button onclick="location.href='home.html'" type="button" class="col btn btn-dark">Home</button>
     <div class="col"></div>
   </div>
 </header>
 
+<!-- タイトル -->
+<div class="container-fluid">
+  <h1 id="title" class="display-1 ps-4 pt-2 mb-4">Artificial Listener</h1>
+</div>
 <div class="container">
+  <!-- メイン -->
+  <div class="row">
+    <img id="game-image" class="col-6" src="Images/AL_main.png" alt="ゲーム画面" width="100%">
+    <div class="col-6">
+      <p id="env" class="fs-4">開発環境やライブラリ：Unity</p>
+      <p id="time" class="fs-4">制作時間：97時間</p>
+      <p id="member-num" class="fs-4">制作人数：1人</p>
+      <p id="my-part" class="fs-4">担当：</p>
+      <p id="link">関連リンク：<a href=""></a></p>
+    </div>
+  </div>
+  <p class="fs-4 mb-0">概要：</p>
+  <p id="abstract" class="mt-0 fs-5">あああああ</p>
 
+  <!-- アピールポイント1つ目 -->
+  <h2 id="point1-header" class="text-center m-4 display-4 text-decoration-underline">ゲームエンジンに頼らないサウンド再生</h2>
+  <div class="row">
+    <div class="col-5">
+      <p id="point1-content" class="fs-5">あああああああああああああああ</p>
+    </div>
+    <div id="point1-images" class="col-7 border">
+
+    </div>
+  </div>
+
+  <!-- アピールポイント2つ目 -->
+  <div style="height: 40px"></div>
+  <h2 id="point2-header" class="text-center m-4 display-4 text-decoration-underline">ゲームエンジンに頼らないサウンド再生</h2>
+  <div class="row">
+    <div id="point2-images" class="col-8 border">
+
+    </div>
+    <div class="col-4">
+      <p id="point2-content" class="fs-5">あああああああああああああああ</p>
+    </div>
+  </div>
 </div>
 
-<!-- プロフィールを表示 -->
+<!-- フッター -->
+<footer style="height: 60px" class="bg-dark container-fluid mt-4"></footer>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js
 "></script>
+<script type="text/javascript" src="work.js"></script>
+<script type="text/javascript">
+  updateInfo("Artificial Listener");
+</script>
 
 </body>
 </html>
