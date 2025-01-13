@@ -176,7 +176,7 @@ function showOthers(){
             \t\t<p>${abstract}</p>
             \t\t<div class="row m-1">
             \t\t\t<div class="col-8"></div>
-            \t\t\t<button class="col-4 btn btn-warning">More</button>
+            \t\t\t<button onclick="location.href='work-${title}.html'" class="col-4 btn btn-warning">More</button>
             \t\t</div>
             \t</div>
             `
