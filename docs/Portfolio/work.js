@@ -8,6 +8,7 @@ function updateInfo(gameTitle) {
   ).then(
     (json) => {
       json.values.forEach((row) => {
+        let kind = row[0];
         let title = row[1];
         if(title == gameTitle)
         {
@@ -107,39 +108,39 @@ function updateInfo(gameTitle) {
               break;
           }
 
-          document.getElementById("point2-header").innerHTML = point2_title;
-          document.getElementById("point2-content").innerHTML = point2_message;
-          let existCount_point2 = 0;
-          if(point2_image1 != "" && point2_image1 != undefined) existCount_point2++;
-          if(point2_image2 != "" && point2_image2 != undefined) existCount_point2++;
-          if(point2_image3 != "" && point2_image3 != undefined) existCount_point2++;
-          if(point2_image4 != "" && point2_image4 != undefined) existCount_point2++;
-          console.log(existCount_point2);
-          element = document.getElementById("point2-images");
-          switch (existCount_point2)
-          {
-            case 1:
-              element.innerHTML =
-              `
+          if(kind == "メイン") {
+            document.getElementById("point2-header").innerHTML = point2_title;
+            document.getElementById("point2-content").innerHTML = point2_message;
+            let existCount_point2 = 0;
+            if (point2_image1 != "" && point2_image1 != undefined) existCount_point2++;
+            if (point2_image2 != "" && point2_image2 != undefined) existCount_point2++;
+            if (point2_image3 != "" && point2_image3 != undefined) existCount_point2++;
+            if (point2_image4 != "" && point2_image4 != undefined) existCount_point2++;
+            console.log(existCount_point2);
+            element = document.getElementById("point2-images");
+            switch (existCount_point2) {
+              case 1:
+                element.innerHTML =
+                    `
               <div class="row">
                 <img class="col-12" src="${point2_image1}" alt="アピール画像1-1" width="100%">
               </div>
               `
-              break;
+                break;
 
-            case 2:
-              element.innerHTML =
-              `
+              case 2:
+                element.innerHTML =
+                    `
               <div class="row">
                 <img class="col-6" src="${point2_image1}" alt="アピール画像1-1" width="100%">
                 <img class="col-6" src="${point2_image2}" alt="アピール画像1-2" width="100%">
               </div>
               `
-              break;
+                break;
 
-            case 3:
-              element.innerHTML =
-              `
+              case 3:
+                element.innerHTML =
+                    `
               <div class="row">
                 <img class="col-12" src="${point2_image1}" alt="アピール画像1-1" width="100%">
               </div>
@@ -148,11 +149,11 @@ function updateInfo(gameTitle) {
                 <img class="col-6" src="${point2_image3}" alt="アピール画像1-3" width="100%">
               </div>
               `
-              break;
+                break;
 
-            case 4:
-              element.innerHTML =
-              `
+              case 4:
+                element.innerHTML =
+                    `
               <div class="row">
                 <img class="col-6" src="${point2_image1}" alt="アピール画像1-1" width="100%">
                 <img class="col-6" src="${point2_image2}" alt="アピール画像1-2" width="100%">
@@ -162,7 +163,8 @@ function updateInfo(gameTitle) {
                 <img class="col-6" src="${point2_image4}" alt="アピール画像1-4" width="100%">
               </div>
               `
-              break;
+                break;
+            }
           }
         }
       });
