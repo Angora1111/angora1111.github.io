@@ -2,6 +2,22 @@ async function wait(second){
   return new Promise(resolve => setTimeout(resolve, 1000 * second));
 }
 
+function writeUpdateDate(){
+  let url = `https://sheets.googleapis.com/v4/spreadsheets/1Xc76fJwuRMAVVwUsyTrybb9MbYqZ3SWrzcmrEBV3-Fw/values/UpdateDate?key=AIzaSyBWN4pynC1PzYGwVMHLYh84w0KjAzAWmYY`;
+
+  fetch(url).then(
+    function (response) {
+      return response.json();
+    }
+  ).then(
+    (json) => {
+      json.values.forEach((row) => {
+        document.getElementById("footer").innerHTML = `最終更新日：${row[0]}`;
+      });
+    }
+  )
+}
+
 async function opening() {
   anime({
     targets: "#start-text",
@@ -67,6 +83,8 @@ async function opening() {
   await wait(1.2-0.24);
 
   document.getElementById("start-cover-parent").innerHTML = "";
+
+  writeUpdateDate();
 }
 
 async function subOpening() {
@@ -91,4 +109,6 @@ async function subOpening() {
   await wait(1.2);
 
   document.getElementById("start-cover-parent").innerHTML = "";
+
+  writeUpdateDate();
 }
