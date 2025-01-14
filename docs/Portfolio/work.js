@@ -35,7 +35,17 @@ function updateInfo(gameTitle) {
           let point2_image4 = row[20];
 
           document.getElementById("title").innerHTML = title;
-          document.getElementById("game-image").src = imageMain;
+          let extension = imageMain.toString().split('.');
+          extension = extension[extension.length - 1];
+          console.log(extension);
+          if(extension == 'mp4')
+          {
+            document.querySelector("#game-image").innerHTML = `<video src="${imageMain}" autoplay muted loop controls width="100%">`;
+          }
+          else
+          {
+            document.querySelector("#game-image").innerHTML = `<img src="${imageMain}" alt="ゲーム画面" width="100%">`;
+          }
           document.getElementById("env").innerHTML = `開発環境やライブラリ：${env}`;
           document.getElementById("time").innerHTML = `制作時間：${workTime}`;
           document.getElementById("member-num").innerHTML = `制作人数：${workerNum}`;

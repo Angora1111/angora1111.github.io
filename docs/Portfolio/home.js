@@ -46,7 +46,17 @@ fetch(url).then(
         let image = row[8];
 
         if(kind == 'メイン'){
-          document.querySelector(`#main${mainCount}-image`).src = image;
+          let extension = image.toString().split('.');
+          extension = extension[extension.length - 1];
+          console.log(extension);
+          if(extension == 'mp4')
+          {
+            document.querySelector(`#main${mainCount}-image`).innerHTML = `<video src="${image}" autoplay muted loop controls width="100%">`;
+          }
+          else
+          {
+            document.querySelector(`#main${mainCount}-image`).innerHTML = `<img src="${image}" alt="メイン画像${mainCount}" width="100%">`;
+          }
           document.querySelector(`#main${mainCount}-title`).innerHTML = title;
           document.querySelector(`#main${mainCount}-abstract`).innerHTML = abstract;
           mainCount++;
@@ -107,7 +117,7 @@ fetch(url).then(
         let colWidth = [2, 5, 8];
         for(let i = 0; i < row.length; i += 2){
           text +=
-              `
+            `
             <div class="row mb-2">
               <div class="col-1"></div>
               <div class="col-3 fs-3 fw-bold">${row[i]}</div>
@@ -168,10 +178,24 @@ function showOthers(){
             if(subCount % 4 == 0) {
               subWorkHtml += '<div class="row">';
             }
+            // --- 動画or画像 ---
+            let extension = image.toString().split('.');
+            extension = extension[extension.length - 1];
+            console.log(extension);
+            let imgLine = '';
+            if(extension == 'mp4')
+            {
+              imgLine = `<video src="${image}" autoplay muted loop controls width="100%">`;
+            }
+            else
+            {
+              imgLine = `<img src="${image}" alt="サブ画像${subCount+1}" width="100%">`;
+            }
+            // ----------------
             subWorkHtml +=
             `
             \t<div class="col-3 gameBlock">
-            \t\t<img src=${image} alt=サブ画像${subCount+1} width="100%"/>
+            \t\t${imgLine}
             \t\t<p class="fw-bold fs-3 mb-0 text-decoration-underline">${title}</p>
             \t\t<p>${abstract}</p>
             \t\t<div class="row m-1">
