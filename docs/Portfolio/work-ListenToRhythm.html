@@ -25,52 +25,46 @@
   </div>
 </header>
 
-<!-- タイトル -->
 <div class="container-fluid">
-  <h1 style="background: linear-gradient(transparent 70%, #86b7fe 70%); width: 600px" id="title" class="display-1 ps-4 pt-2 mb-4"></h1>
+  <h1 style="background: linear-gradient(transparent 70%, #86b7fe 70%); width: 600px; max-width: 80%" id="title" class="workTitle"></h1>
 </div>
 <div class="container">
   <!-- メイン -->
   <div class="row">
     <div id="game-image" class="col-6"></div>
     <div class="col-6">
-      <p id="env" class="fs-4">開発環境やライブラリ：</p>
-      <p id="time" class="fs-4">制作時間：</p>
-      <p id="member-num" class="fs-4">制作人数：</p>
-      <p id="my-part" class="fs-4">担当：</p>
-      <p id="link">関連リンク：<a href=""></a></p>
+      <p id="env" class="workBoldText">開発環境やライブラリ：</p>
+      <p id="time" class="workBoldText">制作時間：</p>
+      <p id="member-num" class="workBoldText">制作人数：</p>
+      <p id="my-part" class="workBoldText">担当：</p>
+      <p id="link" class="workBoldText">関連リンク：<a href=""></a></p>
     </div>
   </div>
-  <p id="abstract" class="mt-2 fs-5"></p>
+  <p id="abstract" class="mt-2 workText"></p>
 </div>
 
-<div style="margin-right: 20%; margin-left: 20%" class="mt-5">
+<div class="intervalAbstractAndPoint">
   <!-- アピールポイント1つ目 -->
-  <h2 id="point1-header" class="pointTitle m-4 display-4 fw-bold"></h2>
+  <h2 id="point1-header" class="pointTitle display-4 fw-bold"></h2>
   <div class="row">
-    <div class="col-5">
-      <p id="point1-content" class="fs-5"></p>
-    </div>
-    <div id="point1-images" class="col-7">
-
+    <p id="point1-content" class="workText"></p>
+    <div style="padding-left: 7%; padding-right: 7%" id="point1-images">
     </div>
   </div>
 
   <!-- アピールポイント2つ目 -->
-  <div style="height: 40px"></div>
-  <h2 id="point2-header" class="pointTitle m-4 display-4 fw-bold"></h2>
+  <h2 id="point2-header" class="pointTitle display-4 fw-bold"></h2>
   <div class="row">
-    <div id="point2-images" class="col-7">
-
-    </div>
-    <div class="col-5">
-      <p id="point2-content" class="fs-5"></p>
+    <p id="point2-content" class="workText"></p>
+    <div style="padding-left: 7%; padding-right: 7%" id="point2-images">
     </div>
   </div>
+
+  <div style="height: 1rem"></div>
 </div>
 
 <!-- フッター -->
-<footer id="footer" style="height: 60px" class="bg-dark container-fluid mt-4 text-white text-end"></footer>
+<footer id="footer" class="bg-dark container-fluid footerDate text-white text-end"></footer>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js
 "></script>

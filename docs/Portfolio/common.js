@@ -22,7 +22,7 @@ async function opening() {
   anime({
     targets: "#start-text",
     fontSize: {
-      value: "80px",
+      value: "*=2.2",
       duration: 800
     },
   })
@@ -57,6 +57,13 @@ async function opening() {
       value: "rgba(10, 10, 10, 0)",
       duration: 10000
     }
+  })
+  anime({
+    targets: "#start-text",
+    color: {
+      value: "rgba(255, 255, 255, 0)",
+      duration: 8000
+    },
   })
 
   anime({

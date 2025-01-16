@@ -97,14 +97,14 @@ fetch(url).then(
         let element = document.getElementById("language");
         let text = '';
         let progressName = ["Beginner", "Intermediate", "Advanced"];
-        let colWidth = [2, 5, 8];
+        let colWidth = [2, 4, 7];
         for(let i = 0; i < row.length; i += 2){
           text +=
             `
             <div class="row mb-2">
               <div class="col-1"></div>
-              <div class="col-3 fs-3 fw-bold">${row[i]}</div>
-              <div class="col-${colWidth[row[i+1]-1]} bg-primary text-white align-middle fs-4">${progressName[row[i+1]-1]}</div>
+              <div class="col-3 profileSkillName">${row[i]}</div>
+              <div class="col-${colWidth[row[i+1]-1]} bg-primary text-white align-middle profileSkillGuage">${progressName[row[i+1]-1]}</div>
             </div>
             `
         }
@@ -114,14 +114,14 @@ fetch(url).then(
         let element = document.getElementById("tool");
         let text = '';
         let progressName = ["Beginner", "Intermediate", "Advanced"];
-        let colWidth = [2, 5, 8];
+        let colWidth = [2, 4, 7];
         for(let i = 0; i < row.length; i += 2){
           text +=
             `
             <div class="row mb-2">
               <div class="col-1"></div>
-              <div class="col-3 fs-3 fw-bold">${row[i]}</div>
-              <div class="col-${colWidth[row[i+1]-1]} bg-primary text-white align-middle fs-4">${progressName[row[i+1]-1]}</div>
+              <div class="col-3 profileSkillName">${row[i]}</div>
+              <div class="col-${colWidth[row[i+1]-1]} bg-primary text-white profileSkillGuage">${progressName[row[i+1]-1]}</div>
             </div>
             `
         }
@@ -196,11 +196,10 @@ function showOthers(){
             `
             \t<div class="col-3 gameBlock">
             \t\t${imgLine}
-            \t\t<p class="fw-bold fs-3 mb-0 text-decoration-underline">${title}</p>
-            \t\t<p>${abstract}</p>
-            \t\t<div class="row m-1">
-            \t\t\t<div class="col-8"></div>
-            \t\t\t<button onclick="location.href='work-${title}.html'" class="col-4 btn btn-warning">More</button>
+            \t\t<p class="otherGameTitle">${title}</p>
+            \t\t<p class="gameAbstract">${abstract}</p>
+            \t\t<div class="moreButton">
+            \t\t\t<button onclick="location.href='work-${title}.html'" class="btn btn-warning">More</button>
             \t\t</div>
             \t</div>
             `
