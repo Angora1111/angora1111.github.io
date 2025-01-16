@@ -97,7 +97,7 @@ fetch(url).then(
         let element = document.getElementById("language");
         let text = '';
         let progressName = ["Beginner", "Intermediate", "Advanced"];
-        let colWidth = [2, 4, 7];
+        let colWidth = [3, 5, 7];
         for(let i = 0; i < row.length; i += 2){
           text +=
             `
@@ -114,7 +114,7 @@ fetch(url).then(
         let element = document.getElementById("tool");
         let text = '';
         let progressName = ["Beginner", "Intermediate", "Advanced"];
-        let colWidth = [2, 4, 7];
+        let colWidth = [3, 5, 7];
         for(let i = 0; i < row.length; i += 2){
           text +=
             `
