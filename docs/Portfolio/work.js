@@ -17,6 +17,7 @@ function updateInfo(gameTitle) {
           let workerNum = row[4];
           let myPart = row[5];
           let link = row[6];
+          links = link.split("|")
           let abstract = row[7];
           let imageMain = row[8];
 
@@ -51,12 +52,20 @@ function updateInfo(gameTitle) {
           document.getElementById("member-num").innerHTML = `制作人数：${workerNum}`;
           document.getElementById("my-part").innerHTML = `担当：${myPart}`;
           document.getElementById("link").innerHTML = link;
-          if(link == "なし") {
-            document.getElementById("link").innerHTML = "関連リンク：なし";
+          if(links.length == 2)
+          {
+            document.getElementById("link").innerHTML = `<br>プレイ動画：<a href="${links[0]}">${links[0]}</a><br><br>`;
+            document.getElementById("link").innerHTML += `ゲームはこちら：<a href="${links[1]}">${links[1]}</a>`;
           }
           else
           {
-            document.getElementById("link").innerHTML = `関連リンク：<a href="${link}">${link}</a>`;
+            if(links[0] == "なし") {
+              document.getElementById("link").innerHTML = "関連リンク：なし";
+            }
+            else
+            {
+              document.getElementById("link").innerHTML = `関連リンク：<a href="${links[0]}">${links[0]}</a>`;
+            }
           }
           document.getElementById("abstract").innerHTML = abstract;
 
