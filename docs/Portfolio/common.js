@@ -3,7 +3,7 @@ async function wait(second){
 }
 
 function writeUpdateDate(){
-  let url = `https://sheets.googleapis.com/v4/spreadsheets/1Xc76fJwuRMAVVwUsyTrybb9MbYqZ3SWrzcmrEBV3-Fw/values/UpdateDate?key=AIzaSyBWN4pynC1PzYGwVMHLYh84w0KjAzAWmYY`;
+  let url = `https://sheets.googleapis.com/v4/spreadsheets/1Nf7knbL2kYsp3ZBTFjPAqgQ50hSgL9p34-9ltmC5FNU/values/UpdateDate?key=AIzaSyASbSKLIuShhKaA_Xsu7xTfjX9jtY6Npvs`;
 
   fetch(url).then(
     function (response) {

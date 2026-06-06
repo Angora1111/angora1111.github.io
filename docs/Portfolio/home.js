@@ -25,7 +25,7 @@ async function restartCircles(){
 }
 
 // 作品情報
-let url = `https://sheets.googleapis.com/v4/spreadsheets/1Xc76fJwuRMAVVwUsyTrybb9MbYqZ3SWrzcmrEBV3-Fw/values/Works?key=AIzaSyBWN4pynC1PzYGwVMHLYh84w0KjAzAWmYY`;
+let url = `https://sheets.googleapis.com/v4/spreadsheets/1Nf7knbL2kYsp3ZBTFjPAqgQ50hSgL9p34-9ltmC5FNU/values/Works?key=AIzaSyASbSKLIuShhKaA_Xsu7xTfjX9jtY6Npvs`;
 
 fetch(url).then(
   function (response) {
