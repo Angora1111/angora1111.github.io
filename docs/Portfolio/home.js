@@ -89,7 +89,7 @@ fetch(url).then(
         document.getElementById("profile-myFace").src = myFace;
         document.getElementById("profile-name").innerHTML = name;
         document.getElementById("profile-born").innerHTML = `${born} ${birthday} 生まれ`;
-        document.getElementById("profile-university").innerHTML = university;
+        document.getElementById("profile-university").innerHTML = `出身大学：${university}`;
         document.getElementById("profile-hobby").innerHTML = `趣味：${hobby}`;
         document.getElementById("profile-desire").innerHTML = desire;
       }
